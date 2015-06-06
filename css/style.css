@@ -17,14 +17,18 @@ body
 }
 
 
-
 #homepage #home-description
 {
     padding-top: 20vh;
 }
 
+#homepage #home-description-inner
+{
+    font-size: 20px;
+    line-height: 1.8em;
+}
 
-#homepage #home-description  #view
+#homepage #view
 {
     background-color: transparent;
     width: 200px;
@@ -37,8 +41,3 @@ body
     outline: none;
 }
 
-#homepage #home-description-inner
-{
-    font-size: 20px;
-    line-height: 1.8em;
-}
