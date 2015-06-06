@@ -1,0 +1,37 @@
+.navbar
+{
+    background-color: transparent;
+    border: none;
+}
+
+.navbar img
+{
+    max-width: 140px;
+}
+
+.navbar-default .navbar-header .navbar-brand, .navbar-default #navbar .nav a
+{
+    color:white;
+}
+
+
+
+.nav-link:after{
+    display: block;
+    position: absolute;
+    left: 14px;
+    bottom: 12px;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    content: "";
+    transition: width 0.2s;
+}
+.nav-link:hover{
+    color: #fff;
+}
+.nav-link:hover:after{
+    text-align: center;
+    width: 68%;
+}
+

@@ -1,0 +1,52 @@
+The title of the web app should be "Housing + Transport Affordability, Australia"
+The nav bar includes the following sections:
+ABOUT
+H+T INDEX
+MAPS
+FUNDING
+CONTACT
+ABOUT section includes the following text
+
+Housing affordability is declining in Australia. According to the Reserve Bank, over the past 30 years, the ratio of housing prices to income has increased substantially. [source: http://www.rba.gov.au/speeches/2009/sp-so-260309.html] This project aims to develop a new tool to measure housing + transport affordability in Australia, with greater Melbourne selected as the pilot study area.
+
+How is affordability measured?
+
+Housing affordability is traditionally measured using the percentage of income spent on housing costs. As a common rule, households who spend more than 30% of their income on housing costs while earning in the bottom 40% of the income range are considered to be under housing stress. An important cost that is usually overlooked in measuring affordability is the transport or accessibility costs.
+
+Need for an “open” online tool to offer personalised affordability index in Australia
+
+Currently, there is no publicly available tool in Australia to visualise and communicate the combined housing and transport affordability, supporting decision making by citizens, planners, and policy-makers.
+
+The new online tool provides benefit to regional planning, state, and municipal policy development, siting of affordable housing, transport planning, scenario evaluation, affordability awareness, and homebuyer counseling. The new tool will help improving capacity to plan integrated growing cities, contributing to well-being and social inclusion.
+
+H+T INDEX section includes three parts
+HOUSING COSTS:
+Median monthly mortgage repayments
+Median monthly rent
+TRANSPORT COSTS:
+Vehicle ownership costs
+Vehicle use costs
+Public transit use costs
+Time spent in commuting
+H+T AFFORDABILITY
+Total housing costs over income
+Total transport costs over income
+Housing + Transport costs over income
+Then put a map of Melbourne from Google/Openstreetmap. We will then update the map with a Mapbox visualization.
+
+FUNDING OPPORTUNITIES sections includes the following text.
+
+We are seeking $200,000 for a period of two years to conduct the proposed project. Monash University has already invested an initial seed funding of about $16,000 in the project. Funding will be used to support PhD student(s) and Research Fellow(s) for relevant research and development activities.
+
+If you or your organisation is interested in the project, you could join our sponsoring team. We welcome partial funding contributions as small as $20,000 per year. You support is appreciated. Feel free to contact us if you want to discuss about funding and other opportunities.
+
+SPONSORING TEAM
+
+Use these three logos
+https://go8.edu.au/sites/default/files/images/institution/monash.png
+https://thecentrefordrawingual.files.wordpress.com/2013/02/rmit_pos_rgb-for-web.jpg
+http://www.youthconnect.com.au/wp-content/uploads/2012/04/Brotherhood-of-St-Laurence-Logo.jpg
+
+CONTACT
+
+use a similar contact section as the city science webpage.
