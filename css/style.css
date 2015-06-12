@@ -1,6 +1,68 @@
 body
 {
     font-family: 'Open Sans', sans-serif;
+    color: #0080b1;
+}
+
+h1
+{
+    font-size: 54px;
+}
+
+h3
+{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#rule
+{
+    background-color: #2878B5;
+}
+
+#cost
+{
+    background-color: transparent;
+    width: 200px;
+}
+
+.navbar-expanded
+{
+    background-color: #ffffff;
+    color: black;
+    height: 60px;
+    transition: all 0.5s ease;
+
+}
+
+.navbar-expanded-link
+{
+    color:#0080b1 !important;
+
+}
+
+.hover-background:before
+{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 100%;
+    right: 0;
+    bottom: 0;
+    background: #0080b1;
+    height: 4px;
+    -webkit-transition-property: left;
+    transition-property: left;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.navbar-brand img
+{
+    width:100px;
+    
 }
 
 #homepage
@@ -39,6 +101,17 @@ body
     padding-right: 80px;
 }
 
+#homepage .inner-container a:hover,
+#homepage .inner-container a:link,
+#homepage .inner-container a:active,
+#homepage .inner-container a:visited,
+a
+{
+    color: white;
+    text-decoration: none;
+}
+
+
 #homepage #view
 {
     background-color: transparent;
@@ -66,6 +139,50 @@ body
     background-color: transparent;
 }
 
+#about .container
+{
+    padding-top:40px;
+}
+
+.description
+{
+    width:90%;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 16px;
+}
+
+.description small
+{
+    font-size: 12px;
+}
+
+.description b
+{
+    color:#0080b1;
+}
+
+.description .thumbnail
+{
+    border: none;
+}
+
+.description-heading
+{
+    margin-top:50px;
+    font-size: 20px;
+    color: #727878;
+    line-height: 1.6em;
+}
+
+.description-heading-small
+{
+    margin-top:50px;
+    font-size: 18px;
+    color: #727878;
+    line-height: 1.6em;
+}
+
 
 #index
 {
@@ -73,5 +190,26 @@ body
     background-color: transparent;
 }
 
+
+
+
+.mPS2id-highlight:before
+{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0%;
+    right: 50%;
+    bottom: 0;
+    background: #0080b1;
+    width: 100%;
+    height: 4px;
+    -webkit-transition-property: left, right;
+    transition-property: left, right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
 
 

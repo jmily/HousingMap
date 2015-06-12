@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
 
-    <title>Housing + Transport Affordability, Australia</title>
+    <title>Australian Housing & Transport Affordability</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link href="css/lib/hover.css" rel="stylesheet" media="all">
@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top starts-hidden first-shown">
+<nav class="navbar navbar-default navbar-fixed-top starts-hidden first-shown" id="nav-menu">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -22,15 +22,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="images/monash.png"></a>
+            <a class="navbar-brand" href=""><img src="images/monash.png"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="hvr-underline-from-center" href="">ABOUT</a></li>
-                <li><a class="hvr-underline-from-center" href="index.html">H+T INDEX</a></li>
-                <li><a class="hvr-underline-from-center" href="#">MAPS</a></li>
-                <li><a class="hvr-underline-from-center" href="#">FUNDING</a></li>
-                <li><a class="hvr-underline-from-center" href="#">CONTACT</a></li>
+                <li><a class="hvr-underline-from-right" href="#about">ABOUT</a></li>
+                <li><a class="hvr-underline-from-right" href="#index">H&T INDEX</a></li>
+                <li><a class="hvr-underline-from-right" href="#maps">MAPS</a></li>
+                <li><a class="hvr-underline-from-right" href="#funding">FUNDING</a></li>
+                <li><a class="hvr-underline-from-right" href="#contact">CONTACT</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -38,20 +38,67 @@
 
 <section id="homepage" class="starts-hidden first-shown">
     <div class="container" id="home-description">
-          <h1 class="text-center"><b>Australian Transport & Housing Affordability</b></h1><br>
+          <h1 class="text-center"><b>Australian Housing & Transport Affordability</b></h1><br>
         <div class="inner-container">
               <p class="text-center" id="home-description-inner">
                   The Australian housing and transport affordability project provides a comprehensive
-                  view of affordability that includes both the cost of housing and transport at the neighborhood level
+                  view of affordability that includes both the cost of housing and transport at the neighborhood level.
               </p><br>
-              <p class="text-center"><button id="view" class="hvr-outline-in">View Project</button></p>
+              <p class="text-center"><a rel="next"><button id="view" class="hvr-outline-in">View Project</button></a></p>
             </div>
     </div>
 </section>
 
 <section id="about">
-   <div data-sr="enter top over 1.5s wait 0.5s" class="container">
-       <h1 class="text-center">About</h1>
+   <div class="container">
+       <h1 data-sr="enter top over 1.5s wait 0.5s" class="text-center">About</h1>
+
+       <div class="description">
+           <p class="text-center description-heading">
+               "Housing affordability is declining in Australia. According to the Reserve Bank, over the past 30 years,
+               the ratio of housing prices to income has increased substantially". - RBA<br>
+               <small>[source: http://www.rba.gov.au/speeches/2009/sp-so-260309.html]</small>
+           </p>
+
+           <p class="text-center description-heading">
+               This project aims to develop a new tool to measure housing + transport affordability in Australia,
+               with greater Melbourne selected as the pilot study area.
+           </p>
+
+
+           <p class="text-center description-heading">
+               <b>How is affordability measured</b><br>
+               Housing affordability is traditionally measured using the percentage of income spent on housing costs.
+           </p>
+
+           <br>
+           <div class="row">
+               <div class="col-xs-6">
+                   <div class="thumbnail">
+                       <img data-sr="enter left over 1.5s wait 0.5s" src="images/rule.png" id="rule">
+                       <div class="caption text-center">
+                           <h3>Common Rule</h3>
+                           <p class="description-heading-small">
+                               households who spend more than 30% of their income on housing costs while earning in the bottom 40% of the income range are considered to be under housing stress.
+                           </p>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-xs-6">
+                   <div class="thumbnail">
+                       <img data-sr="enter right over 1.5s wait 0.5s" src="images/cost.png" id="cost">
+                       <div class="caption text-center">
+                           <h3>Overlooked Cost</h3>
+                           <p class="description-heading-small">
+                               An important cost that is usually overlooked in measuring affordability is the transport or accessibility costs.
+                               Need for an “open” online tool to offer personalised affordability index in Australia
+                           </p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
    </div>
 </section>
 
@@ -71,6 +118,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/lib/loadingoverlay.min.js"></script>
+<script src="js/lib/scrolltodiv.min.js"></script>
+<script src="js/lib/classie.js"></script>
 <script>
     $.LoadingOverlaySetup({
         color           : "rgba(0,8,31, 1)",
@@ -91,6 +140,16 @@
     {
         $.LoadingOverlay("hide");
         $('.first-shown').removeClass("starts-hidden");
+
+        $("#nav-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+            highlightSelector:"#nav-menu a"
+        });
+        $("a[rel='next']").click(function(e){
+            e.preventDefault();
+            // var to=$(this).parent().parent("section").next().attr("id");
+            var to = $('#about').attr("id");
+            $.mPageScroll2id("scrollTo",to);
+        });
     });
 
     window.sr= new scrollReveal({
@@ -99,6 +158,53 @@
         mobile: true
     });
 
+</script>
+
+<script>
+
+
+    var cbpAnimatedHeader = (function() {
+
+        var docElem = document.documentElement,
+                header = document.querySelector('.navbar-fixed-top'),
+                headerLink = document.querySelector('.nav a'),
+                didScroll = false,
+                changeHeaderOn = 100;
+
+        // console.log(header);
+
+        function init() {
+            window.addEventListener( 'scroll', function( event ) {
+                if( !didScroll ) {
+                    didScroll = true;
+                    setTimeout( scrollPage, 100 );
+                }
+            }, false );
+        }
+
+        function scrollPage() {
+            var sy = scrollY();
+            //console.log(header);
+            if ( sy <= changeHeaderOn ) {
+                   classie.remove( header, 'navbar-expanded' );
+                 $('.nav a').removeClass('navbar-expanded-link');
+                $('.hvr-underline-from-right').removeClass('hover-background');
+            }
+            else {
+                    classie.add( header, 'navbar-expanded' );
+                    $('.nav a').addClass('navbar-expanded-link');
+                    $('.hvr-underline-from-right').addClass('hover-background');
+            }
+            didScroll = false;
+        }
+
+        function scrollY() {
+            return window.pageYOffset || docElem.scrollTop;
+        }
+
+        init();
+
+    })();
 </script>
 
 </body>
