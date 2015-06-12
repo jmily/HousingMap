@@ -5,7 +5,12 @@ body
 
 #homepage
 {
-    background-color: #28a55f;
+    /*background-color: #28a55f;*/
+    background: url("../images/bg.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     height: 100vh;
     width: 100vw;
     color:white;
@@ -28,6 +33,12 @@ body
     line-height: 1.8em;
 }
 
+#homepage .inner-container
+{
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
 #homepage #view
 {
     background-color: transparent;
@@ -40,4 +51,27 @@ body
     margin-right: auto;
     outline: none;
 }
+
+
+
+.starts-hidden
+{
+    display:none;
+}
+
+
+#about
+{
+    height: 800px;
+    background-color: transparent;
+}
+
+
+#index
+{
+    height: 800px;
+    background-color: transparent;
+}
+
+
 

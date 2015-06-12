@@ -2,15 +2,18 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+
     <title>Housing + Transport Affordability, Australia</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="css/lib/hover.css" rel="stylesheet" media="all">
     <link href="css/custom.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <style> [data-sr] { visibility: hidden; } </style>
 </head>
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top starts-hidden first-shown">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -23,29 +26,33 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="nav-link" href="">ABOUT</a></li>
-                <li><a class="nav-link" href="index.html">H+T INDEX</a></li>
-                <li><a class="nav-link" href="#">MAPS</a></li>
-                <li><a class="nav-link" href="#">FUNDING</a></li>
-                <li><a class="nav-link" href="#">CONTACT</a></li>
+                <li><a class="hvr-underline-from-center" href="">ABOUT</a></li>
+                <li><a class="hvr-underline-from-center" href="index.html">H+T INDEX</a></li>
+                <li><a class="hvr-underline-from-center" href="#">MAPS</a></li>
+                <li><a class="hvr-underline-from-center" href="#">FUNDING</a></li>
+                <li><a class="hvr-underline-from-center" href="#">CONTACT</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
 
-<section id="homepage">
+<section id="homepage" class="starts-hidden first-shown">
     <div class="container" id="home-description">
-          <h1 class="text-center"><b>Australia Transport & Housing Affordability</b></h1><br>
-          <p class="text-center" id="home-description-inner">
-              The Housing and Transportation (H+T®) Affordability Index provides a<br>
-              comprehensive view of affordability that includes both the cost of housing and the<br>
-              cost of transportation at the neighborhood level.
-          </p><br>
-          <p class="text-center"><button id="view">View Project</button></p>
+          <h1 class="text-center"><b>Australian Transport & Housing Affordability</b></h1><br>
+        <div class="inner-container">
+              <p class="text-center" id="home-description-inner">
+                  The Australian housing and transport affordability project provides a comprehensive
+                  view of affordability that includes both the cost of housing and transport at the neighborhood level
+              </p><br>
+              <p class="text-center"><button id="view" class="hvr-outline-in">View Project</button></p>
+            </div>
     </div>
 </section>
 
 <section id="about">
+   <div data-sr="enter top over 1.5s wait 0.5s" class="container">
+       <h1 class="text-center">About</h1>
+   </div>
 </section>
 
 
@@ -63,7 +70,36 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/lib/loadingoverlay.min.js"></script>
+<script>
+    $.LoadingOverlaySetup({
+        color           : "rgba(0,8,31, 1)",
+        image           : "images/loader.gif",
+        maxSize         : "80px",
+        minSize         : "20px",
+        resizeInterval  : 0,
+        size            : "50%"
+    });
+    $.LoadingOverlay("show");
+</script>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="js/lib/scrollReveal.min.js"></script>
+
+<script>
+    $(window).load(function()
+    {
+        $.LoadingOverlay("hide");
+        $('.first-shown').removeClass("starts-hidden");
+    });
+
+    window.sr= new scrollReveal({
+        reset: true,
+        move: '50px',
+        mobile: true
+    });
+
+</script>
 
 </body>
 </html>
