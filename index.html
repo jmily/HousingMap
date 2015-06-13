@@ -6,6 +6,8 @@
     <title>Australian Housing & Transport Affordability</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
     <link href="css/lib/hover.css" rel="stylesheet" media="all">
     <link href="css/custom.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -104,9 +106,94 @@
 
 
 <section id="index">
+    <div class="container">
+        <h1 data-sr="enter top over 1.5s wait 0.5s" class="text-center">H+T INDEX</h1>
+
+
+        <div class="row" id="cost-list">
+            <div class="col-xs-4" data-sr="wait 0.5s ease-in">
+                <div class="media">
+                   <div class="pull-left">
+                       <i class="fa fa-home"></i>
+                    </div>
+                    <div class="media-body">
+                        <div class="media-heading">
+                           <h3>HOUSING COSTS</h3>
+                        </div>
+
+                        <ul>
+                            <li>
+                                Median monthly mortgage repayments
+                            </li>
+                            <li>
+                                Median monthly rent
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-4">
+                <div class="media" data-sr="wait 1s ease-in">
+                    <div class="pull-left">
+                        <i class="fa fa-car"></i>
+                    </div>
+                    <div class="media-body">
+                        <div class="media-heading">
+                            <h3>TRANSPORT COSTS</h3>
+                        </div>
+
+                        <ul>
+                            <li>
+                                Vehicle ownership costs
+                            </li>
+                            <li>
+                                Vehicle use costs
+                            </li>
+                            <li>
+                                Public transit use costs
+                            </li>
+                            <li>
+                                Time spent in commuting
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-4">
+                <div class="media" data-sr="wait 1.5s ease-in">
+                    <div class="pull-left">
+                        <i class="fa fa-usd"></i>
+                    </div>
+                    <div class="media-body">
+                        <div class="media-heading">
+                            <h3>H+T AFFORDABILITY</h3>
+                        </div>
+                       <ul>
+                           <li>
+                               Total housing costs over income
+                           </li>
+                           <li>
+                               Total transport costs over income
+                           </li>
+                           <li>
+                               Housing + Transport costs over income
+                           </li>
+                       </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="maps">
+    <div class="container">
+        <h1 data-sr="enter top over 1.5s wait 0.5s" class="text-center">The Map</h1>
+    </div>
+    <div id="map"></div>
 </section>
 
 <section id="funding">
@@ -120,6 +207,7 @@
 <script src="js/lib/loadingoverlay.min.js"></script>
 <script src="js/lib/scrolltodiv.min.js"></script>
 <script src="js/lib/classie.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
 <script>
     $.LoadingOverlaySetup({
         color           : "rgba(0,8,31, 1)",
@@ -205,6 +293,18 @@
         init();
 
     })();
+
+
+
+    var map = L.map('map',{
+        center: [-37.831180, 145.009731],
+        zoom: 10,
+        scrollWheelZoom: false
+    });
+    L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        id: 'examples.map-20v6611k'
+    }).addTo(map);
 </script>
 
 </body>
