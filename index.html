@@ -53,7 +53,7 @@
 
 <section id="about">
    <div class="container">
-       <h1 data-sr="enter top over 1.5s wait 0.5s" class="text-center">About</h1>
+       <h1 data-sr="enter top over 1.5s wait 0.5s" class="text-center">ABOUT</h1>
 
        <div class="description">
            <p class="text-center description-heading">
@@ -191,15 +191,62 @@
 
 <section id="maps">
     <div class="container">
-        <h1 data-sr="enter top over 1.5s wait 0.5s" class="text-center">The Map</h1>
+        <h1 data-sr="enter top over 1.5s wait 0.5s" class="text-center">MAP</h1>
     </div>
     <div id="map"></div>
 </section>
 
 <section id="funding">
+  <h1 data-sr="enter top over 1.5s wait 0.5s" class="text-center">FUNDING</h1>
+    <div class="opportunity">
+        <p class="text-center description-heading">
+            We are seeking $200,000 for a period of two years to conduct the proposed project. Monash University has already invested an initial seed funding of about $16,000 in the project. Funding will be used to support PhD student(s) and Research Fellow(s) for relevant research and development activities.
+            If you or your organisation is interested in the project, you could join our sponsoring team. We welcome partial funding contributions as small as $20,000 per year. You support is appreciated. Feel free to contact us if you want to discuss about funding and other opportunities.
+        </p>
+    </div>
+
+    <div class="team">
+        <h3 class="text-center">SPONSORING TEAM</h3>
+        <div class="row">
+            <p class="text-center">
+                <img src="images/monash.png" alt="Monash University"/>
+                <img src="images/rmit.jpg" alt="RMIT"/>
+                <img src="images/laurence.jpg" alt="Laurence"/>
+            </p>
+
+        </div>
+    </div>
+
+
 </section>
 
 <section id="contact">
+    <div class="container">
+        <h1 data-sr="enter top over 1.5s wait 0.5s" class="text-center">CONTACT US</h1>
+
+        <div class="row" id="contact-detail">
+            <div class="col-xs-push-2 col-xs-4 text-right">
+                <div class="contact-map" id="contact-map">
+
+                </div>
+            </div>
+            <div class="col-xs-push-2 col-xs-5 text-left">
+                <div class="contact-info">
+                    <p>
+                        Dr. Meead Saberi<br>
+                        Department of Civil Engineering<br>
+                        Monash University<br>
+                    </p>
+
+                    <p class="info-bottom">
+                        <i class="fa fa-phone"></i> +61 3 9905 0236<br>
+                        <i class="fa fa-envelope-o"></i> meead.saberi@monash.edu<br>
+                        <i class="fa fa-location-arrow"></i>Room 101, Building 60, Clayton campus
+                    </p>
+                </div>
+           </div>
+        </div>
+    </div>
 </section>
 
 
@@ -305,6 +352,24 @@
         maxZoom: 18,
         id: 'examples.map-20v6611k'
     }).addTo(map);
+
+
+    var contactMap = L.map('contact-map',{
+        center: [ -37.915042, 145.134661],
+        zoom: 13,
+        scrollWheelZoom: false
+    });
+    L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        id: 'examples.map-20v6611k'
+    }).addTo(contactMap);
+
+
+    L.marker([ -37.915042, 145.134661]).addTo(contactMap)
+            .bindPopup("<b>We are here.</b>");
+
+
+
 </script>
 
 </body>

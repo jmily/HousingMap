@@ -2,6 +2,7 @@ body
 {
     font-family: 'Open Sans', sans-serif;
     color: #0080b1;
+    overflow-x: hidden;
 }
 
 h1
@@ -134,12 +135,13 @@ a
 }
 
 
-#about
+#about, #contact
 {
 
     background-color: #f5f5f5;
     padding: 100px 0;
 }
+
 
 #about .container, #index .container
 {
@@ -255,7 +257,44 @@ a
 }
 
 
-#cost-list
+#cost-list, #contact-detail
 {
     padding-top:60px;
+}
+
+
+#funding
+{
+    padding: 100px;
+}
+
+#funding img
+{
+    max-width:240px;
+    height:55px;
+    padding-right:50px;
+}
+
+#funding h3
+{
+    padding:50px 0 20px 0;
+}
+
+
+
+#contact .contact-map
+{
+    height:235px;
+}
+
+#contact .contact-info
+{
+    color:#727878;
+    font-size: 20px;
+    line-height: 1.6em;
+}
+
+#contact .info-bottom
+{
+    padding-top: 30px;
 }
