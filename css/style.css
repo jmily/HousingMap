@@ -148,7 +148,7 @@ a
     padding-top:40px;
 }
 
-.description
+.description, .opportunity
 {
     width:75%;
     margin-right: auto;
@@ -298,3 +298,4 @@ a
 {
     padding-top: 30px;
 }
+
