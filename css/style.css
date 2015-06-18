@@ -135,10 +135,16 @@ a
 }
 
 
-#about, #contact
+#about, #team
 {
 
     background-color: #f5f5f5;
+    padding: 100px 0;
+}
+
+
+#contact
+{
     padding: 100px 0;
 }
 
@@ -301,10 +307,6 @@ a
 }
 
 
-.source
-{
-    font-size:12px;
-}
 
 
 .source  a:hover,
@@ -315,4 +317,29 @@ a
 {
     color: #0080b1;
     text-decoration: none;
+}
+
+
+#team img
+{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+#team h4
+{
+    font-weight: 600;
+    padding: 20px;
+}
+
+#team .thumbnail
+{
+    background-color:#f5f5f5;
+    border:none;
+}
+
+#team .team-member
+{
+    margin-top:50px;
 }
