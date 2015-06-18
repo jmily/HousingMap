@@ -146,10 +146,7 @@
         <h1 class="text-center">MAP</h1>
     </div>
     <!--<div id="map"></div>-->
-
-    <iframe src="https://meeadsaberi.cartodb.com/viz/02f705ce-0744-11e5-aca3-0e853d047bba/embed_map" frameborder="0" style="width:100%; height: 800px;">
-
-    </iframe>
+            <iframe  width='100%' height='520' frameborder='0' src='https://meeadsaberi.cartodb.com/viz/90c5fd14-1582-11e5-90ac-0e018d66dc29/embed_map'></iframe>
 </section>
 
 <section id="funding">
@@ -314,6 +311,7 @@
 <script src="js/lib/scrolltodiv.min.js"></script>
 <script src="js/lib/classie.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+<script src="js/lib/interact.js"></script>
 <script>
     $.LoadingOverlaySetup({
         color           : "rgba(0,8,31, 1)",
@@ -427,6 +425,35 @@
     L.marker([ -37.915042, 145.134661]).addTo(contactMap)
             .bindPopup("<b>We are here.</b>");
 
+
+
+    interact('.resize-drag')
+            .draggable({
+                onmove: window.dragMoveListener
+            })
+            .resizable({
+                edges: { left: true, right: true, bottom: true, top: true }
+            })
+            .on('resizemove', function (event) {
+                var target = event.target,
+                        x = (parseFloat(target.getAttribute('data-x')) || 0),
+                        y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+                // update the element's style
+                target.style.width  = event.rect.width + 'px';
+                target.style.height = event.rect.height + 'px';
+
+                // translate when resizing from top or left edges
+                x += event.deltaRect.left;
+                y += event.deltaRect.top;
+
+                target.style.webkitTransform = target.style.transform =
+                        'translate(' + x + 'px,' + y + 'px)';
+
+                target.setAttribute('data-x', x);
+                target.setAttribute('data-y', y);
+                target.textContent = event.rect.width + '×' + event.rect.height;
+            });
 
 
 </script>
